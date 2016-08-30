@@ -4,5 +4,6 @@ block content
     h1= title
     p Welcome to #{title}
     form(action="/upload",method="post",enctype="multipart/form-data")
-        input(type="file",name="img")
+        input(type="file",name="img",required="required")
+        input(type="text",name="desc",required="required")
         input(type="submit")
