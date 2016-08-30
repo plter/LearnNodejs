@@ -13,13 +13,24 @@ const server = net.createServer((client)=> {
         console.log("Client disconnected.");
     });
 
-    client.on("data", (data)=> {
-        var content = String(data);
-        if (content.trim() == "q") {
-            client.end();
-        } else {
-            client.write(content);
-        }
+    // client.on("data", (data)=> {
+    //     var content = String(data);
+    //
+    //     console.log(content);
+    //
+    //     if (content.trim() == "q") {
+    //         client.end();
+    //     } else {
+    //         client.write(content);
+    //     }
+    // });
+
+    client.on("readable", (data)=> {
+        console.log("" + client.read());
+    });
+
+    client.on("error", function (e) {
+        console.log(e);
     });
 });
 server.listen(9999, ()=> {
