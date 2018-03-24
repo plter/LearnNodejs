@@ -1,0 +1,7 @@
+{
+  "name": "XlsxWithStyle",
+  "version": "0.0.1",
+  "dependencies": {
+    "xlsx-populate": "latest"
+  }
+}
