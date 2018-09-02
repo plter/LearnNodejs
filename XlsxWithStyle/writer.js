@@ -12,8 +12,8 @@ const xlsx = require("xlsx-populate");
     ]);
 
     let maxColumnNum = range.endCell().columnNumber();
-    for (let i = 0; i < maxColumnNum; i++) {
-        let cell = range.cell(0, i);
+    for (let c = 1; c <= maxColumnNum; c++) {
+        let cell = sheet.cell(1, c);
         cell.style("fill", "00ffff");
     }
     await wb.toFileAsync("output.xlsx");
